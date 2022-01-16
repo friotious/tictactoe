@@ -37,7 +37,13 @@ class Game {
     this.startsNextGame = this.playerTwo;
   }
 
-changeTurn() {}
+  changeTurn() {
+    if (this.currentPlayer === this.playerOne.token) {
+      this.currentPlayer = this.playerTwo.token
+    } else {
+      this.currentPlayer = this.playerOne.token)
+  }
+}
 
 makeAMove(space) {
   if (
