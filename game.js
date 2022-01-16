@@ -1,25 +1,47 @@
-var player = require('./player');
-
 class Game {
   constructor() {
-    const playerOne = new Player({id: 'PlayerOne', token: 'X' , wins: 0})
-    const playerTwo = new Player({id: 'PlayerTwo', token: 'O', wins: 0})
-    this.playerOneSpacesFilled = []
-    this.playerTwoSpaceFilled = []
-    this.startsNextGame =
-    this.whoseTurn =
+    this.playerOne = new Player({
+      id: 'PlayerOne',
+      token: 'X',
+      wins: 0,
+      spacesFilled: {
+        a: false,
+        b: false,
+        c: false,
+        d: false,
+        e: false,
+        f: false,
+        g: false,
+        h: false,
+        i: false,
+      }
+    })
+    this.playerTwo = new Player({
+      id: 'PlayerTwo',
+      token: 'O',
+      wins: 0,
+      spacesFilled: {
+        a: false,
+        b: false,
+        c: false,
+        d: false,
+        e: false,
+        f: false,
+        g: false,
+        h: false,
+        i: false,
+      }
+    })
+    this.currentPlayer = this.playerOne;
+    this.startsNextGame = this.playerTwo;
 
   }
-
   changeTurn() {
 
   }
 
-  checkForWin() {
-
-  }
-
   checkForDraw() {
+
 
   }
 
@@ -27,7 +49,18 @@ class Game {
 
   }
 
-  resetGameBoard() {
+  resetGameboard() {
 
   }
+
 }
+
+
+
+
+
+
+
+
+
+//module.exports = game
