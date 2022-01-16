@@ -1,12 +1,12 @@
 class Game {
   constructor() {
     this.playerOne = new Player({
-      id: "PlayerOne",
+      id: "Player One",
       token: "X",
       wins: 0,
     });
     this.playerTwo = new Player({
-      id: "PlayerTwo",
+      id: "Player Two",
       token: "O",
       wins: 0,
     });
@@ -33,13 +33,28 @@ class Game {
       h: false,
       i: false,
     };
-    this.currentPlayer = this.playerOne.token;
-    this.startsNextGame = this.playerTwo;
+    this.currentPlayer = this.playerOne.id;
+    this.startsNextGame = this.playerTwo.id
     this.turnCounter = 0;
     this.weHaveAWinner = false;
   }
 
-  resetGameboard() {}
+  resetGameboard() {
+    Object.keys(this.playerOneSpacesFilled).forEach(v => this.playerOneSpacesFilled[v] = false);
+    Object.keys(this.playerTwoSpacesFilled).forEach(v => this.playerTwoSpacesFilled[v] = false);
+    this.turnCounter = 0;
+    this.currentPlayer = this.startsNextGame
+
+  }
+  
+  changeStartsNextGame() {
+    if (this.startsNextGame === this.playerTwo.id) {
+      this.startsNextGame = this.playerOne.id
+    } else {
+      this.startsNextGame = this.playerTwo.id
+    }
+  }
+
 
   checkForDraw() {
     if (!this.weHaveAWinner) {
@@ -55,20 +70,13 @@ class Game {
   }
 
   changeTurn() {
-    if (this.currentPlayer === this.playerOne.token) {
-      this.currentPlayer = this.playerTwo.token
+    if (this.currentPlayer === this.playerOne.id) {
+      this.currentPlayer = this.playerTwo.id
     } else {
-      this.currentPlayer = this.playerOne.token
+      this.currentPlayer = this.playerOne.id
     }
   }
 
-  changeStartsNextGame() {
-    if (this.startsNextGame === this.playerTwo.token) {
-      this.startsNextGame = this.playerOne.token
-    } else {
-      this.startsNextGame = this.playerTwo.token
-    }
-  }
 
   checkForWin() {
     var win1 = this.playerOneSpacesFilled.a && this.playerOneSpacesFilled.b && this.playerOneSpacesFilled.c;
@@ -84,7 +92,8 @@ class Game {
       this.weHaveAWinner = true;
       this.playerOne.addWin()
       this.changeStartsNextGame()
-      console.log("PLAYER ONE WON");
+      this.resetGameboard()
+      console.log("PLAYER ONE WON this.startsNextGame should be player2");
     } else {
       var win1 = this.playerTwoSpacesFilled.a && this.playerTwoSpacesFilled.b && this.playerTwoSpacesFilled.c;
       var win2 = this.playerTwoSpacesFilled.d && this.playerTwoSpacesFilled.e && this.playerTwoSpacesFilled.f;
@@ -99,19 +108,20 @@ class Game {
         this.weHaveAWinner = true;
         this.playerOne.addWin()
         this.changeStartsNextGame()
-        console.log("PLAYER TWO WON");
+        this.resetGameboard()
+        console.log("PLAYER TWO WON this.startsNextGame should be player1");
       }
     }
   }
 
   makeAMove(space) {
     if (
-      this.currentPlayer === this.playerOne.token &&
+      this.currentPlayer === this.playerOne.id &&
       !this.playerOneSpacesFilled[space]
     ) {
       this.playerOneSpacesFilled[space] = true;
       console.log(this.playerOneSpacesFilled);
-    } else if (this.currentPlayer === this.playerTwo.token &&
+    } else if (this.currentPlayer === this.playerTwo.id &&
       !this.playerTwoSpacesFilled[space]
     ) {
       this.playerTwoSpacesFilled[space] = true;
