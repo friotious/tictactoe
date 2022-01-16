@@ -40,24 +40,25 @@ class Game {
   }
 
   resetGameboard() {
+    this.changeStartsNextGame()
     Object.keys(this.playerOneSpacesFilled).forEach(v => this.playerOneSpacesFilled[v] = false);
     Object.keys(this.playerTwoSpacesFilled).forEach(v => this.playerTwoSpacesFilled[v] = false);
     this.turnCounter = 0;
-    this.currentPlayer = this.startsNextGame
-
+    this.weHaveAWinner = false;
   }
-  
+
   changeStartsNextGame() {
-    if (this.startsNextGame === this.playerTwo.id) {
-      this.startsNextGame = this.playerOne.id
-    } else {
+    if (this.startsNextGame === this.playerOne.id) {
       this.startsNextGame = this.playerTwo.id
+    } else {
+      this.startsNextGame = this.playerOne.id
     }
   }
 
 
   checkForDraw() {
-    if (!this.weHaveAWinner) {
+    if (!this.weHaveAWinner && this.turnCounter === 9) {
+      this.resetGameBoard()
       console.log('game is a draw')
     }
   }
@@ -91,7 +92,6 @@ class Game {
     if (win1 || win2 || win3 || win4 || win5 || win6 || win7 || win8) {
       this.weHaveAWinner = true;
       this.playerOne.addWin()
-      this.changeStartsNextGame()
       this.resetGameboard()
       console.log("PLAYER ONE WON this.startsNextGame should be player2");
     } else {
@@ -107,7 +107,6 @@ class Game {
       if (win1 || win2 || win3 || win4 || win5 || win6 || win7 || win8) {
         this.weHaveAWinner = true;
         this.playerOne.addWin()
-        this.changeStartsNextGame()
         this.resetGameboard()
         console.log("PLAYER TWO WON this.startsNextGame should be player1");
       }
