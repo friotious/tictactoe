@@ -28,3 +28,30 @@ section {
   width: 50px;
   height: 50px;
   padding: 20px;
+}
+
+ABC
+DEF
+GHI
+
+.space-a,
+.space-b,
+.space-c {
+
+}
+
+.space-c,
+.space-f,
+.space-i {
+
+}
+.space-g,
+.space-h,
+.space-i {
+
+}
+.space-a,
+.space-d,
+.space-g {
+  
+}
