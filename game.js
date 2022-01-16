@@ -76,9 +76,14 @@ checkForDraw() {
     console.log('game is a draw')
   }
 }
-changeTurn() {}
 
-changeStartsNextGame() {}
+changeStartsNextGame() {
+  if (this.startsNextGame === this.playerTwo.token) {
+    this.startsNextGame = this.playerOne.token
+  } else {
+    this.startsNextGame = this.playerTwo.token
+  }
+}
 
 resetGameboard() {}
 }
