@@ -35,6 +35,9 @@ class Game {
     };
     this.currentPlayer = this.playerTwo.token;
     this.startsNextGame = this.playerTwo;
+    this.turnCounter = 0;
+    this.pOneWon = false;
+    this.pTwoWon = false;
   }
 
   changeTurn() {
@@ -62,12 +65,17 @@ makeAMove(space) {
   changeTurn()
 }
 
-addOneTurnCounter() {}
+addOneTurnCounter() {
+  this.turnCounter++
+}
 
 checkForWin() {}
 
-checkForDraw() {}
-
+checkForDraw() {
+  if (this.turnCounter === 9 && !this.pOneWon && !this.pTwoWon) {
+    console.log('game is a draw')
+  }
+}
 changeTurn() {}
 
 changeStartsNextGame() {}
