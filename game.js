@@ -1,38 +1,28 @@
 class Game {
   constructor() {
     this.playerOne = new Player({
-      id: "Player One",
+      id: 1,
       token: "X",
       wins: 0,
     });
     this.playerTwo = new Player({
-      id: "Player Two",
+      id: 2,
       token: "O",
       wins: 0,
     });
+    this.gameBoard = {
+      a: 0,
+      b: 0,
+      c: 0,
+      d: 0,
+      e: 0,
+      f: 0,
+      g: 0,
+      h: 0,
+      i: 0,
+    }
 
-    this.playerOneSpacesFilled = {
-      a: false,
-      b: false,
-      c: false,
-      d: false,
-      e: false,
-      f: false,
-      g: false,
-      h: false,
-      i: false,
-    };
-    this.playerTwoSpacesFilled = {
-      a: false,
-      b: false,
-      c: false,
-      d: false,
-      e: false,
-      f: false,
-      g: false,
-      h: false,
-      i: false,
-    };
+
     this.currentPlayer = this.playerOne.id;
     this.startsNextGame = this.playerTwo.id
     this.turnCounter = 0;
