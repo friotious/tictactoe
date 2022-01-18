@@ -2,7 +2,8 @@ class Game {
   constructor() {
     this.playerOne = new Player({
       id: "Player One",
-      token: 1
+      token: 1,
+      wins: 0,
     });
     this.playerTwo = new Player({
       id: "Player Two",
@@ -33,7 +34,7 @@ class Game {
       i: false,
     };
     this.currentPlayer = this.playerOne
-    this.startsNextGame = this.playerTwo.id
+    this.startsNextGame = this.playerTwo
     this.turnCounter = 0;
     this.weHaveAWinner = false;
   }
@@ -48,10 +49,10 @@ class Game {
   }
 
   changeStartsNextGame() {
-    if (this.startsNextGame === this.playerTwo.id) {
-      this.startsNextGame = this.playerOne.id
+    if (this.startsNextGame === this.playerTwo) {
+      this.startsNextGame = this.playerOne
     } else {
-      this.startsNextGame = this.playerTwo.id
+      this.startsNextGame = this.playerTwo
     }
   }
 
@@ -115,17 +116,16 @@ class Game {
   }
 
   makeAMove(space) {
-    if (
-      this.currentPlayer === this.playerOne.id &&
-      !this.playerOneSpacesFilled[space]
-    ) {
-      this.playerOneSpacesFilled[space] = true;
-      console.log(this.playerOneSpacesFilled);
-    } else if (this.currentPlayer === this.playerTwo.id &&
+    if (this.currentPlayer === this.playerOne &&
+      !this.playerOneSpacesFilled[space] &&
       !this.playerTwoSpacesFilled[space]
     ) {
+      this.playerOneSpacesFilled[space] = true;
+    } else if (this.currentPlayer === this.playerTwo &&
+      !this.playerTwoSpacesFilled[space] &&
+      !this.playerOneSpacesFilled[space]
+    ) {
       this.playerTwoSpacesFilled[space] = true;
-      console.log(this.playerTwoSpacesFilled)
     }
     this.addOneTurnCounter()
     this.changeTurn()
