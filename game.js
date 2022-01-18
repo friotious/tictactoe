@@ -45,8 +45,7 @@ class Game {
     Object.keys(this.playerOneSpacesFilled).forEach(v => this.playerOneSpacesFilled[v] = false);
     Object.keys(this.playerTwoSpacesFilled).forEach(v => this.playerTwoSpacesFilled[v] = false);
     this.turnCounter = 0;
-    this.weHaveAWinner = false;
-
+    //this.weHaveAWinner = false;
   }
 
   changeStartsNextGame() {
@@ -56,7 +55,6 @@ class Game {
       this.startsNextGame = this.playerTwo
     }
   }
-
 
   checkForDraw() {
     if (!this.weHaveAWinner && this.turnCounter === 9) {
@@ -131,7 +129,6 @@ class Game {
       return
     }
     this.addOneTurnCounter()
-    this.changeTurn()
     this.checkForWin()
   }
 }
