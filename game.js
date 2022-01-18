@@ -36,7 +36,7 @@ class Game {
     this.gameIsADraw = false
     this.currentPlayer = this.playerOne
     this.startsNextGame = this.playerTwo
-    this.turnCounter = 8;
+    this.turnCounter = 0;
     this.weHaveAWinner = false;
   }
 
