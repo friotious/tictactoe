@@ -33,9 +33,10 @@ class Game {
       h: false,
       i: false,
     };
+    this.gameIsADraw = false
     this.currentPlayer = this.playerOne
     this.startsNextGame = this.playerTwo
-    this.turnCounter = 0;
+    this.turnCounter = 8;
     this.weHaveAWinner = false;
   }
 
@@ -59,7 +60,7 @@ class Game {
 
   checkForDraw() {
     if (!this.weHaveAWinner && this.turnCounter === 9) {
-      this.changeStartsNextGame()
+      this.resetGameboard()
       console.log('game is a draw')
     }
   }
@@ -126,6 +127,8 @@ class Game {
       !this.playerOneSpacesFilled[space]
     ) {
       this.playerTwoSpacesFilled[space] = true;
+    } else {
+      return
     }
     this.addOneTurnCounter()
     this.changeTurn()

@@ -1,5 +1,6 @@
 
 var gameBoard = document.querySelector('.game-board')
+var header = document.querySelector('.player-turn/win/draw')
 
 var game = new Game()
 
@@ -16,12 +17,11 @@ function displayMove(e) {
 }
 function displayWinner() {
   if (game.weHaveAWinner === true) {
-    var header = document.querySelector('.player-turn/win/draw')
-    header.innerText = ""
     header.innerText= `${game.currentPlayer.id} Wins!!!`
   }
 }
 function displayDraw() {
+  if (game.gameIsADraw === true) {
 
+  }
 }
-////////////////////  write more specific methods ///////////////////
