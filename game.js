@@ -58,6 +58,7 @@ class Game {
 
   checkForDraw() {
     if (!this.weHaveAWinner && this.turnCounter === 9) {
+      this.gameIsADraw = true;
       this.resetGameboard()
       console.log('game is a draw')
     }

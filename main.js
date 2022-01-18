@@ -2,8 +2,6 @@
 var gameBoard = document.querySelector('.game-board')
 var header = document.querySelector('.player-turn-win-draw')
 var gameSpace = document.querySelectorAll('.game-space')
-var displayWinsPlayer1 = document.querySelector('.player1')
-var displayWinsPlayer2 = document.querySelector('.player2')
 var player1NumOfWins = document.querySelector('.player1-number-of-wins')
 var player2NumOfWins = document.querySelector('.player2-number-of-wins')
 
@@ -29,9 +27,10 @@ function displayMove(e) {
   var letter = document.getElementById(e.target.id)
   console.log(e.target.id)
     game.makeAMove(e.target.id)
-    letter.innerHTML = `<img class='player2-token-image' src='./assets/${game.currentPlayer.token}.png'/>`
+    letter.innerHTML = `<img class='player${game.currentPlayer.token}-game-token' src='./assets/${game.currentPlayer.token}.png'/>`
     displayWhoseTurn()
     displayWinner()
+    game.checkForDraw()
     displayDraw()
     game.changeTurn()
 }
@@ -47,6 +46,7 @@ function displayWinner() {
     header.innerText = `${game.currentPlayer.id} Wins!!!`
     resetTimer()
     game.weHaveAWinner = false;
+    displayWins()
   }
 }
 
@@ -58,6 +58,6 @@ function displayDraw() {
   }
 }
 function displayWins() {
-  displayWinsPlayer1.innerText = game.playerOne.wins
-  displayWinsPlayer2.innerText = game.playerTwo.wins
+  player1NumOfWins.innerText = game.playerOne.wins
+  player2NumOfWins.innerText = game.playerTwo.wins
 }
