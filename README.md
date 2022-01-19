@@ -13,7 +13,7 @@ TicTacToe is a project to create a digital app of the classic game.  Players tak
 -----
 ### Deployment
 
-This project's github is [here](https://github.com/friotious/tictactoe)
+This project's github is [here](https://friotious.github.io/tictactoe/)
 
 ---
 
