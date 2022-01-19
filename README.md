@@ -8,7 +8,7 @@ TicTacToe is a project to create a digital app of the classic game.  Players tak
 
 ### Contributors
 ---------------
->**Rio Foster**
+**Rio Foster**
 - Project Lead | GitHub Profile: [friotious](https://github.com/friotious)
 -----
 ### Deployment
