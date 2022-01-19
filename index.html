@@ -1,59 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>TicTacToe</title>
-</head>
-
-<body>
-  <main>
-    <section class='player1-section'>
-      <img class='player1-token-image' src="./assets/1.png" alt="" />
-      <h2 class='player1'>
-        Player 1 # of Wins
-      </h2>
-      <h3 class='player1-number-of-wins'></h3>
-    </section>
-    <section class='game-board-section'>
-      <header>
-        <h1 class='player-turn-win-draw'>Tic Tac Toe => GO!</h1>
-      </header>
-      <span class='game-board'>
-        <div class='game-space space-a' id="a">
-        </div>
-        <div class='game-space space-b' id='b'>
-        </div>
-        <div class='game-space space-c' id='c'>
-        </div>
-        <div class='game-space space-d' id='d'>
-        </div>
-        <div class='game-space space-e' id='e'>
-        </div>
-        <div class='game-space space-f' id='f'>
-        </div>
-        <div class='game-space space-g' id='g'>
-        </div>
-        <div class='game-space space-h' id='h'>
-        </div>
-        <div class='game-space space-i' id='i'>
-        </div>
-      </span>
-    </section>
-    <section class='player2-section'>
-      <img class='player2-token-image' src='./assets/2.png' alt='' />
-      <h2 class='player2'>
-        Player 2 # of Wins
-      </h2>
-      <h3 class='player2-number-of-wins'></h3>
-    </section>
-
-  </main>
-  <script type='text/javascript' src='player.js'></script>
-  <script type='text/javascript' src='game.js'></script>
-  <script type='text/javascript' src='main.js'></script>
-</body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>TicTacToe</title>
+  </head>
+  <body>
+    <main>
+      <section class="player1-section">
+        <img class="player1-token-image" src="./assets/1.png" alt="" />
+        <h2 class="player1">
+          Player 1 Wins
+        </h2>
+        <h3 class="player1-number-of-wins">0</h3>
+      </section>
+      <section class="game-board-section">
+        <header>
+          <h1 class="player-turn-win-draw">Tic Tac Toe => GO!</h1>
+        </header>
+        <span class="game-board">
+          <div class="game-space space-a" id="a"></div>
+          <div class="game-space space-b" id="b"></div>
+          <div class="game-space space-c" id="c"></div>
+          <div class="game-space space-d" id="d"></div>
+          <div class="game-space space-e" id="e"></div>
+          <div class="game-space space-f" id="f"></div>
+          <div class="game-space space-g" id="g"></div>
+          <div class="game-space space-h" id="h"></div>
+          <div class="game-space space-i" id="i"></div>
+        </span>
+      </section>
+      <section class="player2-section">
+        <img class="player2-token-image" src="./assets/2.png" alt="" />
+        <h2 class="player2">
+          Player 2 Wins
+        </h2>
+        <h3 class="player2-number-of-wins">0</h3>
+      </section>
+    </main>
+    <script type="text/javascript" src="player.js"></script>
+    <script type="text/javascript" src="game.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+  </body>
 </html>
