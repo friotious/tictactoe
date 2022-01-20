@@ -8,18 +8,18 @@ TicTacToe is a project to create a digital app of the classic game.  Players tak
 
 ### Contributors
 ---------------
->**Rio Foster**
+**Rio Foster**
 - Project Lead | GitHub Profile: [friotious](https://github.com/friotious)
 -----
 ### Deployment
 
-This project's github is [here](https://github.com/friotious/tictactoe)!
+This project's github is [here](https://friotious.github.io/tictactoe/)
 
 ---
 
 ### Tech Used
 
-This project was uses HTML and CSS and Javascript, written in Atom.
+This project uses HTML and CSS and Javascript, written in Atom.
 ---
 ### Features
 
