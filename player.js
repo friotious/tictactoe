@@ -4,7 +4,6 @@ class Player {
     this.token = player.token;
     this.wins = player.wins;
   }
-
   addWin() {
     this.wins++
   }
